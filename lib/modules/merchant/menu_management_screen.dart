@@ -57,7 +57,7 @@ class MenuManagementScreen extends StatelessWidget {
               final items = menuItems.where((e) => e['category'] == selectedCat.value).toList();
               return ListView.separated(
                 padding: const EdgeInsets.all(20),
-                separatorBuilder: (_, __) => const SizedBox(height: 10),
+                separatorBuilder: (_, _) => const SizedBox(height: 10),
                 itemCount: items.length,
                 itemBuilder: (context, index) {
                   final item = items[index];
@@ -94,7 +94,7 @@ class MenuManagementScreen extends StatelessWidget {
                           onChanged: (_) {
                             menuItems[globalIndex] = {...item, 'isAvailable': !(item['isAvailable'] as bool)};
                           },
-                          activeColor: AppColors.success,
+                          activeThumbColor: AppColors.success,
                         ),
                         IconButton(
                           onPressed: () {},
@@ -136,7 +136,7 @@ class MenuManagementScreen extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Obx(() => DropdownButtonFormField<String>(
-              value: catCtrl.value,
+              initialValue: catCtrl.value,
               decoration: const InputDecoration(prefixIcon: Icon(Icons.category_outlined)),
               items: ['Burgers', 'Pizza', 'Drinks'].map((c) => DropdownMenuItem(value: c, child: Text(c))).toList(),
               onChanged: (val) => catCtrl.value = val!,

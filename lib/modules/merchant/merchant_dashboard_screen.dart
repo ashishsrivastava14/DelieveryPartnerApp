@@ -69,7 +69,7 @@ class MerchantDashboardScreen extends StatelessWidget {
                     Switch(
                       value: isOpen.value,
                       onChanged: (_) => isOpen.value = !isOpen.value,
-                      activeColor: Colors.white,
+                      activeThumbColor: Colors.white,
                       activeTrackColor: Colors.white.withValues(alpha: 0.3),
                     ),
                   ],

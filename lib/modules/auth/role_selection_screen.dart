@@ -25,7 +25,18 @@ class RoleSelectionScreen extends StatelessWidget {
             end: Alignment.bottomCenter,
           ),
         ),
-        child: SafeArea(
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: Opacity(
+                opacity: 0.56,
+                child: Image.asset(
+                  'assets/images/delivery_logo.png',
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+            SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(24),
             child: Column(
@@ -69,6 +80,8 @@ class RoleSelectionScreen extends StatelessWidget {
               ],
             ),
           ),
+            ),
+          ],
         ),
       ),
     );

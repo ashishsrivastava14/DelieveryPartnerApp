@@ -51,55 +51,39 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: double.infinity,
-        decoration: const BoxDecoration(gradient: AppColors.darkGradient),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
           children: [
-            AnimatedBuilder(
-              animation: Listenable.merge([_logoController, _pulseController]),
-              builder: (context, child) {
-                return Opacity(
-                  opacity: _logoOpacity.value,
-                  child: Transform.scale(
-                    scale: _logoScale.value * _pulseAnimation.value,
-                    child: child,
-                  ),
-                );
-              },
-              child: Container(
-                width: 120,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(30),
-                  boxShadow: [
-                    BoxShadow(color: AppColors.primary.withValues(alpha: 0.4), blurRadius: 30, spreadRadius: 5),
-                  ],
-                ),
-                child: const Center(
-                  child: Icon(Icons.delivery_dining_rounded, size: 64, color: AppColors.primary),
+            Positioned.fill(
+              child: Center(
+                child: Image.asset(
+                  'assets/images/delivery_logo.png',
+                  fit: BoxFit.contain,
                 ),
               ),
             ),
-            const SizedBox(height: 24),
-            FadeTransition(
-              opacity: _logoOpacity,
+            Positioned.fill(
+              child: Opacity(
+                opacity: 0.6,
+                child: Container(
+                  decoration: const BoxDecoration(gradient: AppColors.darkGradient),
+                ),
+              ),
+            ),
+            Center(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('DeliverEase', style: GoogleFonts.poppins(fontSize: 32, fontWeight: FontWeight.w700, color: Colors.white)),
-                  const SizedBox(height: 4),
-                  Text('Fast • Reliable • Everywhere', style: GoogleFonts.poppins(fontSize: 14, color: Colors.white70)),
+                  const SizedBox(height: 60),
+                  const SizedBox(
+                    width: 36,
+                    height: 36,
+                    child: CircularProgressIndicator(color: AppColors.secondary, strokeWidth: 3),
+                  ),
                 ],
               ),
-            ),
-            const SizedBox(height: 60),
-            const SizedBox(
-              width: 36,
-              height: 36,
-              child: CircularProgressIndicator(color: AppColors.secondary, strokeWidth: 3),
             ),
           ],
         ),

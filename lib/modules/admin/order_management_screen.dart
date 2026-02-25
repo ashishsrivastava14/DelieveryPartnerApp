@@ -33,7 +33,7 @@ class OrderManagementScreen extends StatelessWidget {
             child: Obx(() => ListView.separated(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               scrollDirection: Axis.horizontal,
-              separatorBuilder: (_, __) => const SizedBox(width: 8),
+              separatorBuilder: (_, _) => const SizedBox(width: 8),
               itemCount: controller.filters.length,
               itemBuilder: (context, index) {
                 final filter = controller.filters[index];
@@ -65,7 +65,7 @@ class OrderManagementScreen extends StatelessWidget {
               }
               return ListView.separated(
                 padding: const EdgeInsets.all(20),
-                separatorBuilder: (_, __) => const SizedBox(height: 10),
+                separatorBuilder: (_, _) => const SizedBox(height: 10),
                 itemCount: orders.length,
                 itemBuilder: (context, index) {
                   final order = orders[index];

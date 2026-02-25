@@ -41,7 +41,7 @@ class PromoManagementScreen extends StatelessWidget {
       ),
       body: Obx(() => ListView.separated(
         padding: const EdgeInsets.all(20),
-        separatorBuilder: (_, __) => const SizedBox(height: 10),
+        separatorBuilder: (_, _) => const SizedBox(height: 10),
         itemCount: controller.promos.length,
         itemBuilder: (context, index) {
           final promo = controller.promos[index];
@@ -84,7 +84,7 @@ class PromoManagementScreen extends StatelessWidget {
                     Switch(
                       value: isActive,
                       onChanged: (_) => controller.toggleActive(index),
-                      activeColor: AppColors.secondary,
+                      activeThumbColor: AppColors.secondary,
                     ),
                   ],
                 ),

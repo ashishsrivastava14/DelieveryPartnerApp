@@ -43,7 +43,7 @@ class CustomerSearchScreen extends StatelessWidget {
                       .toList();
               return ListView.separated(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                separatorBuilder: (_, __) => const SizedBox(height: 10),
+                separatorBuilder: (_, _) => const SizedBox(height: 10),
                 itemCount: results.length,
                 itemBuilder: (context, index) {
                   final item = results[index];

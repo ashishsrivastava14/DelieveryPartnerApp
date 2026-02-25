@@ -74,7 +74,7 @@ class PayoutManagementScreen extends StatelessWidget {
 
     return ListView.separated(
       padding: const EdgeInsets.all(20),
-      separatorBuilder: (_, __) => const SizedBox(height: 10),
+      separatorBuilder: (_, _) => const SizedBox(height: 10),
       itemCount: filtered.length,
       itemBuilder: (context, index) {
         final payout = filtered[index];

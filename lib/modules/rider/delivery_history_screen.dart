@@ -17,7 +17,7 @@ class DeliveryHistoryScreen extends StatelessWidget {
       ),
       body: ListView.separated(
         padding: const EdgeInsets.all(20),
-        separatorBuilder: (_, __) => const SizedBox(height: 10),
+        separatorBuilder: (_, _) => const SizedBox(height: 10),
         itemCount: MockData.riderDeliveryHistory.length,
         itemBuilder: (context, index) {
           final del = MockData.riderDeliveryHistory[index];

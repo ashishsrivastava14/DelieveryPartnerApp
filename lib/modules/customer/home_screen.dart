@@ -99,7 +99,7 @@ class CustomerHomeScreen extends StatelessWidget {
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.symmetric(horizontal: 20),
-                  separatorBuilder: (_, __) => const SizedBox(width: 12),
+                  separatorBuilder: (_, _) => const SizedBox(width: 12),
                   itemCount: MockData.categories.length,
                   itemBuilder: (context, index) {
                     final cat = MockData.categories[index];
@@ -175,7 +175,7 @@ class CustomerHomeScreen extends StatelessWidget {
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.symmetric(horizontal: 20),
-                  separatorBuilder: (_, __) => const SizedBox(width: 14),
+                  separatorBuilder: (_, _) => const SizedBox(width: 14),
                   itemCount: MockData.stores.length,
                   itemBuilder: (context, index) {
                     final store = MockData.stores[index];
@@ -256,7 +256,7 @@ class CustomerHomeScreen extends StatelessWidget {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                separatorBuilder: (_, __) => const SizedBox(height: 12),
+                separatorBuilder: (_, _) => const SizedBox(height: 12),
                 itemCount: 3,
                 itemBuilder: (context, index) {
                   final store = MockData.stores[index];

@@ -229,7 +229,7 @@ class RiderDashboardScreen extends StatelessWidget {
                       child: Switch(
                         value: controller.isOnline.value,
                         onChanged: (_) => controller.toggleOnline(),
-                        activeColor: Colors.white,
+                        activeThumbColor: Colors.white,
                         activeTrackColor: Colors.white.withValues(alpha: 0.3),
                         inactiveTrackColor: Colors.white.withValues(alpha: 0.2),
                         inactiveThumbColor: Colors.white,

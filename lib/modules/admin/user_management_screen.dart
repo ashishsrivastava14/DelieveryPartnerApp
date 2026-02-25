@@ -64,7 +64,7 @@ class UserManagementScreen extends StatelessWidget {
 
     return ListView.separated(
       padding: const EdgeInsets.all(20),
-      separatorBuilder: (_, __) => const SizedBox(height: 10),
+      separatorBuilder: (_, _) => const SizedBox(height: 10),
       itemCount: users.length,
       itemBuilder: (context, index) {
         final user = users[index];

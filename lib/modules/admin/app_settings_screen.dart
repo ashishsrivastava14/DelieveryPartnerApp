@@ -64,7 +64,7 @@ class AppSettingsScreen extends StatelessWidget {
                     children: [
                       Text('Enable Surge', style: GoogleFonts.poppins(fontSize: 14)),
                       const Spacer(),
-                      Switch(value: surgeEnabled.value, onChanged: (v) => surgeEnabled.value = v, activeColor: AppColors.adminColor),
+                      Switch(value: surgeEnabled.value, onChanged: (v) => surgeEnabled.value = v, activeThumbColor: AppColors.adminColor),
                     ],
                   ),
                   if (surgeEnabled.value) ...[
@@ -233,7 +233,7 @@ class AppSettingsScreen extends StatelessWidget {
               Text(subtitle, style: GoogleFonts.poppins(fontSize: 11, color: AppColors.textSecondary)),
             ],
           )),
-          Switch(value: value.value, onChanged: (v) => value.value = v, activeColor: AppColors.adminColor),
+          Switch(value: value.value, onChanged: (v) => value.value = v, activeThumbColor: AppColors.adminColor),
         ],
       ),
     );

@@ -38,7 +38,7 @@ class SupportTicketsScreen extends StatelessWidget {
             child: Obx(() => ListView.separated(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               scrollDirection: Axis.horizontal,
-              separatorBuilder: (_, __) => const SizedBox(width: 8),
+              separatorBuilder: (_, _) => const SizedBox(width: 8),
               itemCount: filters.length,
               itemBuilder: (context, index) {
                 final f = filters[index];
@@ -76,7 +76,7 @@ class SupportTicketsScreen extends StatelessWidget {
 
               return ListView.separated(
                 padding: const EdgeInsets.all(20),
-                separatorBuilder: (_, __) => const SizedBox(height: 10),
+                separatorBuilder: (_, _) => const SizedBox(height: 10),
                 itemCount: tickets.length,
                 itemBuilder: (context, index) {
                   final ticket = tickets[index];

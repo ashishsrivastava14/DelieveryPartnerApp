@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:delivery_partner_app/core/theme/app_theme.dart';
 import 'package:delivery_partner_app/modules/customer/home_screen.dart';
 import 'package:delivery_partner_app/modules/customer/search_screen.dart';
 import 'package:delivery_partner_app/modules/customer/order_history_screen.dart';
