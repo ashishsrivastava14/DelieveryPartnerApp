@@ -130,13 +130,13 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen>
                             ).animate(_headerAnimation),
                             child: Image.asset(
                               'assets/images/logo.png',
-                              width: 110,
-                              height: 110,
+                              width: 280,
+                              height: 280,
                               fit: BoxFit.contain,
                             ),
                           ),
                         ),
-                        const SizedBox(height: 12),
+                        const SizedBox(height: 2),
                         // Title & subtitle
                         FadeTransition(
                           opacity: _headerAnimation,
