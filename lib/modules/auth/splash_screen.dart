@@ -68,7 +68,13 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
               child: Opacity(
                 opacity: 0.6,
                 child: Container(
-                  decoration: const BoxDecoration(gradient: AppColors.darkGradient),
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [Color(0xFFF5F3FF), Color(0xFFEDE7FF)],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
+                  ),
                 ),
               ),
             ),
