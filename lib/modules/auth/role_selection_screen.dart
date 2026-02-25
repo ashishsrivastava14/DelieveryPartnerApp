@@ -99,7 +99,7 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen>
             // Full-screen background image
             Positioned.fill(
               child: Image.asset(
-                'assets/images/role_bg.png',
+                'assets/images/role_bg_1.png',
                 fit: BoxFit.cover,
               ),
             ),
