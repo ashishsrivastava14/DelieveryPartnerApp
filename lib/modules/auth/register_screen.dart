@@ -36,7 +36,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
-                Image.asset('assets/images/logo.png', width: 144, height: 144, fit: BoxFit.contain),
+                Image.asset('assets/images/logo.png', width: 144, height: 144, fit: BoxFit.contain, semanticLabel: 'DeliverEase logo'),
                 const SizedBox(height: 12),
                 Text('Create Account', style: GoogleFonts.poppins(fontSize: 28, fontWeight: FontWeight.w700, color: AppColors.textPrimary)),
                 const SizedBox(height: 4),
