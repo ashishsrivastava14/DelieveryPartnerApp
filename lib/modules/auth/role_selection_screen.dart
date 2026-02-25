@@ -28,12 +28,9 @@ class RoleSelectionScreen extends StatelessWidget {
         child: Stack(
           children: [
             Positioned.fill(
-              child: Opacity(
-                opacity: 0.56,
-                child: Image.asset(
-                  'assets/images/delivery_logo.png',
-                  fit: BoxFit.contain,
-                ),
+              child: Image.asset(
+                'assets/images/delivery_bg_light.png',
+                fit: BoxFit.cover,
               ),
             ),
             SafeArea(
