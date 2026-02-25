@@ -101,51 +101,51 @@ class RoleSelectionScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 8),
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                colors: [Color(0x1A6C3CE1), Color(0x1AFF6B35)],
-                              ),
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                color: const Color(0xFF6C3CE1).withValues(alpha: 0.2),
-                              ),
-                            ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
+                          const SizedBox(height: 10),
+                          Text.rich(
+                            TextSpan(
                               children: [
-                                const Icon(Icons.bolt_rounded, size: 14, color: Color(0xFFFF6B35)),
-                                const SizedBox(width: 6),
-                                Text(
-                                  'Fast',
+                                TextSpan(
+                                  text: 'Fast',
                                   style: GoogleFonts.poppins(
-                                    fontSize: 12,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.w600,
                                     color: const Color(0xFF6C3CE1),
+                                    letterSpacing: 0.5,
                                   ),
                                 ),
-                                _buildDot(),
-                                const Icon(Icons.verified_rounded, size: 14, color: Color(0xFF1DB954)),
-                                const SizedBox(width: 4),
-                                Text(
-                                  'Reliable',
+                                TextSpan(
+                                  text: '  ·  ',
                                   style: GoogleFonts.poppins(
-                                    fontSize: 12,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.grey.shade400,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: 'Reliable',
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 15,
                                     fontWeight: FontWeight.w600,
                                     color: const Color(0xFF1DB954),
+                                    letterSpacing: 0.5,
                                   ),
                                 ),
-                                _buildDot(),
-                                const Icon(Icons.public_rounded, size: 14, color: Color(0xFF1A73E8)),
-                                const SizedBox(width: 4),
-                                Text(
-                                  'Everywhere',
+                                TextSpan(
+                                  text: '  ·  ',
                                   style: GoogleFonts.poppins(
-                                    fontSize: 12,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.grey.shade400,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: 'Everywhere',
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 15,
                                     fontWeight: FontWeight.w600,
                                     color: const Color(0xFF1A73E8),
+                                    letterSpacing: 0.5,
                                   ),
                                 ),
                               ],
@@ -176,8 +176,8 @@ class RoleSelectionScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text('Who are you?', style: GoogleFonts.poppins(fontSize: 26, fontWeight: FontWeight.w800, color: AppColors.textPrimary, height: 1.1)),
-                          const SizedBox(height: 4),
+                          // Text('Who are you?', style: GoogleFonts.poppins(fontSize: 26, fontWeight: FontWeight.w800, color: AppColors.textPrimary, height: 1.1)),
+                          // const SizedBox(height: 4),
                           Text('Select your role to get started', style: GoogleFonts.poppins(fontSize: 14, color: AppColors.textSecondary)),
                           const SizedBox(height: 20),
                           ...List.generate(roles.length, (index) {
@@ -211,19 +211,6 @@ class RoleSelectionScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildDot() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
-      child: Container(
-        width: 4,
-        height: 4,
-        decoration: BoxDecoration(
-          color: AppColors.textSecondary.withValues(alpha: 0.4),
-          shape: BoxShape.circle,
-        ),
-      ),
-    );
-  }
 }
 
 class _RoleCard extends StatefulWidget {
