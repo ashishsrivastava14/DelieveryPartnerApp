@@ -68,6 +68,10 @@ flutter:
     - assets/images/logo.png
     - assets/images/role_bg.png
     - assets/images/role_bg_1.png
+    - assets/images/role_customer.jpg
+    - assets/images/role_rider.jpg
+    - assets/images/role_merchant.jpg
+    - assets/images/role_admin.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

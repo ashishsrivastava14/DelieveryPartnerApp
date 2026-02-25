@@ -26,7 +26,7 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen>
       'gradient': [Color(0xFF7B2FBE), Color(0xFFAB6FE8)],
       'accent': Color(0xFF7B2FBE),
       'overlay': Color(0xFF7B2FBE),
-      'image': 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&q=80',
+      'image': 'assets/images/role_customer.jpg',
     },
     {
       'title': 'Rider',
@@ -35,7 +35,7 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen>
       'gradient': [Color(0xFF0D9F6E), Color(0xFF34D399)],
       'accent': Color(0xFF0D9F6E),
       'overlay': Color(0xFF0D9F6E),
-      'image': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80',
+      'image': 'assets/images/role_rider.jpg',
     },
     {
       'title': 'Merchant',
@@ -44,7 +44,7 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen>
       'gradient': [Color(0xFF2563EB), Color(0xFF60A5FA)],
       'accent': Color(0xFF2563EB),
       'overlay': Color(0xFF2563EB),
-      'image': 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80',
+      'image': 'assets/images/role_merchant.jpg',
     },
     {
       'title': 'Admin',
@@ -53,7 +53,7 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen>
       'gradient': [Color(0xFFDB2777), Color(0xFFF472B6)],
       'accent': Color(0xFFDB2777),
       'overlay': Color(0xFFDB2777),
-      'image': 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=80',
+      'image': 'assets/images/role_admin.jpg',
     },
   ];
 
@@ -366,7 +366,7 @@ class _RoleCardState extends State<_RoleCard>
                     children: [
                       // Background image
                       Positioned.fill(
-                        child: Image.network(
+                        child: Image.asset(
                           widget.imageUrl,
                           fit: BoxFit.cover,
                           errorBuilder: (_, __, ___) => Container(
@@ -378,18 +378,6 @@ class _RoleCardState extends State<_RoleCard>
                               ),
                             ),
                           ),
-                          loadingBuilder: (_, child, progress) {
-                            if (progress == null) return child;
-                            return Container(
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: widget.gradientColors,
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                ),
-                              ),
-                            );
-                          },
                         ),
                       ),
                       // Tinted color overlay so text stays legible
