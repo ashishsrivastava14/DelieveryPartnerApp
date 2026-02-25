@@ -70,22 +70,20 @@ class RoleSelectionScreen extends StatelessWidget {
                     const SizedBox(height: 8),
                     Row(
                       children: [
-                        Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: AppColors.primary.withValues(alpha: 0.12),
-                            borderRadius: BorderRadius.circular(14),
-                          ),
-                          child: const Icon(Icons.delivery_dining_rounded, size: 28, color: AppColors.primary),
-                        ),
+                        // Image.asset(
+                        //   'assets/images/logo.png',
+                        //   width: 144,
+                        //   height: 144,
+                        //   fit: BoxFit.contain,
+                        // ),
                         const SizedBox(width: 12),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('DeliverEase', style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.textPrimary)),
-                            Text('Fast • Reliable • Everywhere', style: GoogleFonts.poppins(fontSize: 11, color: AppColors.textSecondary)),
-                          ],
-                        ),
+                        // Column(
+                        //   crossAxisAlignment: CrossAxisAlignment.start,
+                        //   children: [
+                        //     Text('DeliverEase', style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.textPrimary)),
+                        //     Text('Fast • Reliable • Everywhere', style: GoogleFonts.poppins(fontSize: 11, color: AppColors.textSecondary)),
+                        //   ],
+                        // ),
                       ],
                     ),
                     const SizedBox(height: 28),
