@@ -400,8 +400,8 @@ class _RoleCardState extends State<_RoleCard>
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                widget.overlayColor.withValues(alpha: 0.55),
-                                widget.overlayColor.withValues(alpha: 0.72),
+                                widget.overlayColor.withValues(alpha: 0.25),
+                                widget.overlayColor.withValues(alpha: 0.60),
                               ],
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
