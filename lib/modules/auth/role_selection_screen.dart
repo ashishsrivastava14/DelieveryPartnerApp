@@ -106,7 +106,7 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen>
             // Dark scrim so content stays readable
             Positioned.fill(
               child: Container(
-                color: Colors.black.withValues(alpha: 0.35),
+                color: Colors.black.withValues(alpha: 0.15),
               ),
             ),
             // Scrollable content
@@ -145,15 +145,15 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen>
                               begin: const Offset(0, -0.3),
                               end: Offset.zero,
                             ).animate(_headerAnimation),
-                            child: Column(
-                              children: [
-                                ShaderMask(
-                                  shaderCallback: (bounds) => const LinearGradient(
-                                    colors: [Color(0xFFE0CFFF), Color(0xFFFFD6C0)],
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight,
-                                  ).createShader(bounds),
-                                  child: Text(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                              decoration: BoxDecoration(
+                                color: Colors.black.withValues(alpha: 0.45),
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Column(
+                                children: [
+                                  Text(
                                     'Choose your role',
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.poppins(
@@ -161,21 +161,35 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen>
                                       fontWeight: FontWeight.w800,
                                       color: Colors.white,
                                       height: 1.15,
+                                      shadows: [
+                                        Shadow(
+                                          color: Colors.black.withValues(alpha: 0.6),
+                                          blurRadius: 8,
+                                          offset: const Offset(0, 2),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                ),
-                                const SizedBox(height: 6),
-                                Text(
-                                  'Each role has its own supporting features.',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.white.withValues(alpha: 0.75),
-                                    height: 1.4,
+                                  const SizedBox(height: 6),
+                                  Text(
+                                    'Each role has its own supporting features.',
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white.withValues(alpha: 0.92),
+                                      height: 1.4,
+                                      shadows: [
+                                        Shadow(
+                                          color: Colors.black.withValues(alpha: 0.5),
+                                          blurRadius: 6,
+                                          offset: const Offset(0, 1),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
