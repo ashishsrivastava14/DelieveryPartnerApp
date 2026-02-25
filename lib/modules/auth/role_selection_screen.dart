@@ -10,10 +10,38 @@ class RoleSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final roles = [
-      {'title': 'Customer', 'icon': Icons.shopping_bag_rounded, 'color': AppColors.customerColor, 'desc': 'Order food & essentials', 'gradient': const [Color(0xFF6C3CE1), Color(0xFF9B7BF7)]},
-      {'title': 'Rider', 'icon': Icons.delivery_dining_rounded, 'color': AppColors.riderColor, 'desc': 'Deliver & earn money', 'gradient': const [Color(0xFF2ECC71), Color(0xFF58D68D)]},
-      {'title': 'Merchant', 'icon': Icons.storefront_rounded, 'color': AppColors.merchantColor, 'desc': 'Manage your store', 'gradient': const [Color(0xFFFF6B35), Color(0xFFFF9A76)]},
-      {'title': 'Admin', 'icon': Icons.admin_panel_settings_rounded, 'color': AppColors.adminColor, 'desc': 'Manage the platform', 'gradient': const [Color(0xFF3498DB), Color(0xFF74B9FF)]},
+      {
+        'title': 'Customer',
+        'icon': Icons.shopping_bag_rounded,
+        'desc': 'Order food & essentials delivered fast',
+        'gradient': const [Color(0xFF6C3CE1), Color(0xFF9B7BF7)],
+        'accent': const Color(0xFF6C3CE1),
+        'tag': 'Shop Now',
+      },
+      {
+        'title': 'Rider',
+        'icon': Icons.delivery_dining_rounded,
+        'desc': 'Deliver orders & earn on your schedule',
+        'gradient': const [Color(0xFF1DB954), Color(0xFF52D68A)],
+        'accent': const Color(0xFF1DB954),
+        'tag': 'Start Earning',
+      },
+      {
+        'title': 'Merchant',
+        'icon': Icons.storefront_rounded,
+        'desc': 'List products & grow your business',
+        'gradient': const [Color(0xFFFF6B35), Color(0xFFFF9A76)],
+        'accent': const Color(0xFFFF6B35),
+        'tag': 'Manage Store',
+      },
+      {
+        'title': 'Admin',
+        'icon': Icons.admin_panel_settings_rounded,
+        'desc': 'Oversee and manage the entire platform',
+        'gradient': const [Color(0xFF1A73E8), Color(0xFF74B9FF)],
+        'accent': const Color(0xFF1A73E8),
+        'tag': 'Control Panel',
+      },
     ];
 
     return Scaffold(
@@ -34,49 +62,59 @@ class RoleSelectionScreen extends StatelessWidget {
               ),
             ),
             SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 20),
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: AppColors.primary.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: const Icon(Icons.delivery_dining_rounded, size: 36, color: AppColors.primary),
-                ),
-                const SizedBox(height: 20),
-                Text('Welcome to\nDeliverEase', style: GoogleFonts.poppins(fontSize: 30, fontWeight: FontWeight.w700, color: AppColors.textPrimary, height: 1.2)),
-                const SizedBox(height: 8),
-                Text('Choose your role to continue', style: GoogleFonts.poppins(fontSize: 16, color: AppColors.textSecondary)),
-                const SizedBox(height: 36),
-                Expanded(
-                  child: GridView.builder(
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 16,
-                      mainAxisSpacing: 16,
-                      childAspectRatio: 0.9,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 8),
+                    Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: AppColors.primary.withValues(alpha: 0.12),
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          child: const Icon(Icons.delivery_dining_rounded, size: 28, color: AppColors.primary),
+                        ),
+                        const SizedBox(width: 12),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('DeliverEase', style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.textPrimary)),
+                            Text('Fast • Reliable • Everywhere', style: GoogleFonts.poppins(fontSize: 11, color: AppColors.textSecondary)),
+                          ],
+                        ),
+                      ],
                     ),
-                    itemCount: roles.length,
-                    itemBuilder: (context, index) {
-                      final role = roles[index];
-                      return _RoleCard(
-                        title: role['title'] as String,
-                        icon: role['icon'] as IconData,
-                        description: role['desc'] as String,
-                        gradientColors: role['gradient'] as List<Color>,
-                        onTap: () => Get.toNamed(AppRoutes.login, arguments: role['title']),
-                      );
-                    },
-                  ),
+                    const SizedBox(height: 28),
+                    Text('Who are you?', style: GoogleFonts.poppins(fontSize: 26, fontWeight: FontWeight.w800, color: AppColors.textPrimary, height: 1.1)),
+                    const SizedBox(height: 4),
+                    Text('Select your role to get started', style: GoogleFonts.poppins(fontSize: 14, color: AppColors.textSecondary)),
+                    const SizedBox(height: 24),
+                    Expanded(
+                      child: ListView.separated(
+                        itemCount: roles.length,
+                        separatorBuilder: (_, __) => const SizedBox(height: 14),
+                        itemBuilder: (context, index) {
+                          final role = roles[index];
+                          return _RoleCard(
+                            title: role['title'] as String,
+                            icon: role['icon'] as IconData,
+                            description: role['desc'] as String,
+                            gradientColors: role['gradient'] as List<Color>,
+                            accentColor: role['accent'] as Color,
+                            tag: role['tag'] as String,
+                            index: index + 1,
+                            onTap: () => Get.toNamed(AppRoutes.login, arguments: role['title']),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
+              ),
             ),
           ],
         ),
@@ -90,6 +128,9 @@ class _RoleCard extends StatefulWidget {
   final IconData icon;
   final String description;
   final List<Color> gradientColors;
+  final Color accentColor;
+  final String tag;
+  final int index;
   final VoidCallback onTap;
 
   const _RoleCard({
@@ -97,6 +138,9 @@ class _RoleCard extends StatefulWidget {
     required this.icon,
     required this.description,
     required this.gradientColors,
+    required this.accentColor,
+    required this.tag,
+    required this.index,
     required this.onTap,
   });
 
@@ -115,48 +159,100 @@ class _RoleCardState extends State<_RoleCard> {
       onTapCancel: () => setState(() => _isPressed = false),
       onTap: widget.onTap,
       child: AnimatedScale(
-        scale: _isPressed ? 0.95 : 1.0,
-        duration: const Duration(milliseconds: 100),
+        scale: _isPressed ? 0.97 : 1.0,
+        duration: const Duration(milliseconds: 120),
         child: Container(
+          height: 90,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: widget.gradientColors,
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
+            color: Colors.white,
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: widget.gradientColors.first.withValues(alpha: 0.35),
-                blurRadius: 16,
-                offset: const Offset(0, 8),
+                color: widget.accentColor.withValues(alpha: 0.15),
+                blurRadius: 18,
+                offset: const Offset(0, 6),
               ),
             ],
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.25),
-                    borderRadius: BorderRadius.circular(14),
+          child: Row(
+            children: [
+              // Colored left accent bar
+              Container(
+                width: 6,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: widget.gradientColors,
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
                   ),
-                  child: Icon(widget.icon, color: Colors.white, size: 30),
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    bottomLeft: Radius.circular(20),
+                  ),
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(widget.title, style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w700, color: Colors.white)),
-                    const SizedBox(height: 2),
-                    Text(widget.description, style: GoogleFonts.poppins(fontSize: 12, color: Colors.white70)),
+              ),
+              const SizedBox(width: 14),
+              // Icon container
+              Container(
+                width: 54,
+                height: 54,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: widget.gradientColors,
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      color: widget.accentColor.withValues(alpha: 0.35),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    ),
                   ],
                 ),
-              ],
-            ),
+                child: Icon(widget.icon, color: Colors.white, size: 26),
+              ),
+              const SizedBox(width: 14),
+              // Text content
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      children: [
+                        Text(widget.title, style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.textPrimary)),
+                        const SizedBox(width: 8),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                          decoration: BoxDecoration(
+                            color: widget.accentColor.withValues(alpha: 0.12),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Text(widget.tag, style: GoogleFonts.poppins(fontSize: 9, fontWeight: FontWeight.w600, color: widget.accentColor)),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 3),
+                    Text(widget.description, style: GoogleFonts.poppins(fontSize: 12, color: AppColors.textSecondary), maxLines: 1, overflow: TextOverflow.ellipsis),
+                  ],
+                ),
+              ),
+              // Arrow
+              Padding(
+                padding: const EdgeInsets.only(right: 16),
+                child: Container(
+                  width: 32,
+                  height: 32,
+                  decoration: BoxDecoration(
+                    color: widget.accentColor.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(Icons.arrow_forward_rounded, color: widget.accentColor, size: 18),
+                ),
+              ),
+            ],
           ),
         ),
       ),
